@@ -17,7 +17,46 @@
       background: linear-gradient(135deg, #007BFF, #A259FF);
       color: white;
       overflow-x: hidden;
+      position: relative;
     }
+
+    /* Botão de som */
+    .btn-musica {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      font-size: 1.8em;
+      color: #FFD6F3;
+    }
+
+    .btn-musica .ondas {
+      display: inline-block;
+      width: 5px;
+      height: 15px;
+      margin-left: 5px;
+      border-radius: 2px;
+      background: #FFD6F3;
+      animation: vibrar 1s infinite ease-in-out;
+    }
+    .btn-musica .ondas:nth-child(2) {
+      animation-delay: 0.1s;
+      height: 10px;
+    }
+    .btn-musica .ondas:nth-child(3) {
+      animation-delay: 0.2s;
+      height: 15px;
+    }
+
+    @keyframes vibrar {
+      0%, 100% { transform: scaleY(1); }
+      50% { transform: scaleY(2); }
+    }
+
+    /* Seções e estilo geral (mantido) */
     section {
       background: linear-gradient(135deg, #007BFF, #A259FF);
       width: 100vw;
@@ -48,11 +87,7 @@
     .btn:hover {
       background: #f3b5e4;
     }
-    .carta p {
-      margin: 10px 0;
-      font-size: 1.1em;
-      line-height: 1.5;
-    }
+
     .carrossel-3d {
       perspective: 1000px;
       width: 90vw;
@@ -119,6 +154,11 @@
 </head>
 <body>
 
+  <!-- BOTÃO DE SOM COM ANIMAÇÃO -->
+  <button class="btn-musica" id="botaoMusica" title="Tocar música">
+    🔇
+  </button>
+
   <audio id="musica" loop>
     <source src="jovem-dionisio-pontos-de-exclamacao.mp3" type="audio/mp3">
   </audio>
@@ -149,7 +189,7 @@
   <section id="carta">
     <h2>Minha Carta 💌</h2>
     <div class="carta">
-      <p>O quanto eu te amo não consigo descrever em palavras... (carta mantida como estava)</p>
+      <p>O quanto eu te amo não consigo descrever em palavras... (mantido)</p>
     </div>
     <button class="btn" onclick="irPara('fim')">Gostou?</button>
   </section>
@@ -162,24 +202,26 @@
   <div class="chuva-corações" id="chuva"></div>
 
   <script>
-    // Música: tocar após clique
-    window.addEventListener('DOMContentLoaded', () => {
-      const audio = document.getElementById('musica');
-      function iniciarMusica() {
-        audio.play().catch(err => console.log('Erro ao tocar música:', err));
-        window.removeEventListener('click', iniciarMusica);
-        window.removeEventListener('touchstart', iniciarMusica);
+    const botaoMusica = document.getElementById('botaoMusica');
+    const musica = document.getElementById('musica');
+    let tocando = false;
+
+    botaoMusica.addEventListener('click', () => {
+      if (!tocando) {
+        musica.play();
+        botaoMusica.innerHTML = `🔊<span class="ondas"></span><span class="ondas"></span><span class="ondas"></span>`;
+        tocando = true;
+      } else {
+        musica.pause();
+        botaoMusica.innerHTML = '🔇';
+        tocando = false;
       }
-      window.addEventListener('click', iniciarMusica);
-      window.addEventListener('touchstart', iniciarMusica);
     });
 
-    // Navegação entre seções
     function irPara(id) {
       document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
     }
 
-    // Efeito de corações
     function explosaoAmor() {
       const coracoes = document.getElementById('chuva');
       for (let i = 0; i < 30; i++) {
@@ -198,7 +240,6 @@
       }
     }
 
-    // Contador de tempo
     const inicioRelacionamento = new Date("2025-05-10T21:30:00");
 
     function atualizarContador() {
@@ -221,6 +262,5 @@
     setInterval(atualizarContador, 1000);
     atualizarContador();
   </script>
-
 </body>
 </html>
