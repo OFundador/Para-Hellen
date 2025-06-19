@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Para Hellen 💖</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #007BFF, #A259FF);
+      color: white;
+      overflow-x: hidden;
+    }
+    section {
+      background: linear-gradient(135deg, #007BFF, #A259FF);
+      width: 100vw;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    h1, h2 {
+      font-family: 'Great Vibes', cursive;
+      color: #FFD6F3;
+      margin-bottom: 20px;
+    }
+    .btn {
+      background: #FFD6F3;
+      color: #4A00E0;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 25px;
+      font-size: 1.2em;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      background: #f3b5e4;
+    }
+    .carta p {
+      margin: 10px 0;
+      font-size: 1.1em;
+      line-height: 1.5;
+    }
+    .carrossel-3d {
+      perspective: 1000px;
+      width: 90vw;
+      height: 320px;
+      position: relative;
+      transform-style: preserve-3d;
+      animation: girar 20s infinite linear;
+    }
+    .carrossel-3d figure {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      transform-style: preserve-3d;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .carrossel-3d figure img,
+    .carrossel-3d figure video {
+      max-width: 280px;
+      height: 300px;
+      border-radius: 16px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      object-fit: cover;
+    }
+    .carrossel-3d figure:nth-child(1) { transform: rotateY(0deg) translateZ(400px); }
+    .carrossel-3d figure:nth-child(2) { transform: rotateY(60deg) translateZ(400px); }
+    .carrossel-3d figure:nth-child(3) { transform: rotateY(120deg) translateZ(400px); }
+    .carrossel-3d figure:nth-child(4) { transform: rotateY(180deg) translateZ(400px); }
+    .carrossel-3d figure:nth-child(5) { transform: rotateY(240deg) translateZ(400px); }
+    .carrossel-3d figure:nth-child(6) { transform: rotateY(300deg) translateZ(400px); }
+    .carrossel-3d figure:nth-child(7) { transform: rotateY(360deg) translateZ(400px); }
+
+    @keyframes girar {
+      0% { transform: rotateY(0deg); }
+      100% { transform: rotateY(360deg); }
+    }
+
+    .final {
+      font-size: 1.4em;
+      margin-top: 30px;
+    }
+    .chuva-corações {
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      width: 100%;
+      height: 100%;
+      z-index: 999;
+    }
+    @keyframes descer {
+      to {
+        transform: translateY(100vh);
+        opacity: 0;
+      }
+    }
+    .contador {
+      font-size: 2em;
+      margin-bottom: 20px;
+      color: #FFD6F3;
+    }
+  </style>
+</head>
+<body>
+  <audio autoplay loop id="musica">
+    <source src="Jovem Dionisio - Pontos de Exclamação.mp3" type="audio/mp3">
+  </audio>
+
+  <section id="contador-tempo">
+    <h1>Nosso tempo juntos</h1>
+    <div class="contador" id="contador"></div>
+      </section>
+
+  <section id="inicio">
+    <h1>Para a mulher mais incrível do mundo…</h1>
+    <button class="btn" onclick="irPara('fotos')">Ver nossas memórias</button>
+  </section>
+
+  <section id="fotos">
+    <h2>Nossas Memórias 📸</h2>
+    <div class="carrossel-3d">
+      <figure><img src="foto1.jpeg" alt="nós dois"></figure>
+      <figure><img src="foto2.jpeg" alt="sorrisos juntos"></figure>
+      <figure><img src="foto3.jpeg" alt="abraço fofo"></figure>
+      <figure><img src="foto4.jpeg" alt="mãos dadas"></figure>
+      <figure><img src="foto5.jpeg" alt="beijinho"></figure>
+      <figure><video src="video1.mp4" muted loop autoplay></video></figure>
+    </div>
+    <button class="btn" onclick="irPara('carta')">Ler minha carta</button>
+  </section>
+
+  <section id="carta">
+    <h2>Minha Carta 💌</h2>
+    <div class="carta">
+      <p>O quanto eu te amo não consigo descrever em palavras. Te amar foi a melhor escolha que já fiz, e você me dá motivos todos os dias para ter certeza disso. Me apaixonar por você foi uma escolha, mas te amar estava fora do meu alcance — algo que não consigo sequer controlar, e nem quero. Sinto-me livre para poder expressar meu amor por você. Sinto-me livre pra dizer que te amo. Sinto-me livre para ser quem realmente sou.
+
+Você é a melhor namorada que eu poderia ter e a única que eu quero ter. Você é linda, inteligente, graciosa, fofa, meiga… Tenho milhares de elogios pra te dar, mas nem todos eles são suficientes para expressar o que penso sobre você. Você é a única pessoa que quero ter ao meu lado. Você é incrível e perfeita. Cada detalhe em você me faz te querer ainda mais — seja da sua personalidade ou do seu corpo.
+
+Nunca duvide que eu te amo. Mas, se duvidar, estarei aqui para provar esse fato quantas vezes for necessário. Eu poderia passar horas tentando escrever essa carta para expressar tudo o que penso e sinto, mas nem sequer consigo, pois essas coisas são tão grandes que demoraria uma vida inteira para escrever. Então prefiro viver uma vida inteira com você, te dizendo parte por parte todos os dias — seja um elogio simples, uma brincadeira ou uma declaração de amor do nada às 1h da manhã.
+
+Eu poderia fazer referências nerds, como dizer que você é meu para-raios, ou colocar frases aleatórias do TikTok, como: “A vida é melhor desde que você chegou”… Mas nada disso é suficiente para expressar o que sinto.
+
+Eu te amo, Hellen. Um amor puro e genuíno. Um amor que nunca senti. Um amor que não quero parar de sentir. E um amor que, se depender de mim, irá transcender a própria morte.
+
+Quero viver muitos e muitos dias com você — dias felizes, difíceis, controversos, aleatórios… Se eu estiver com você, sei que todos serão incríveis e especiais, como os que vivo desde que te conheci. Então, peço que todos os dias que me restam sejam ao seu lado.
+
+Eu te amo, Hellen.</p>
+    </div>
+    <button class="btn" onclick="irPara('fim')">gostou?</button>
+  </section>
+
+  <section id="fim">
+    <p class="final">E que cada novo dia ao seu lado seja um capítulo ainda mais lindo da nossa história. Eu te amo, Hellen.</p>
+    <button class="btn" onclick="explosaoAmor()">💌 Se gostou clique💖. </button>
+  </section>
+
+  <div class="chuva-corações" id="chuva"></div>
+
+  <script>
+    function irPara(id) {
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    }
+    function explosaoAmor() {
+      const coracoes = document.getElementById('chuva');
+      for (let i = 0; i < 30; i++) {
+        const cor = document.createElement('div');
+        cor.innerText = '❤️';
+        cor.style.position = 'absolute';
+        cor.style.fontSize = Math.random() * 30 + 20 + 'px';
+        cor.style.left = Math.random() * 100 + 'vw';
+        cor.style.animation = 'descer 2s linear forwards';
+        cor.style.top = '-30px';
+        cor.style.zIndex = 999;
+        cor.style.pointerEvents = 'none';
+        cor.style.userSelect = 'none';
+        coracoes.appendChild(cor);
+        setTimeout(() => cor.remove(), 2000);
+      }
+    }
+
+    const inicioRelacionamento = new Date("2025-05-10T21:30:00");
+
+    function atualizarContador() {
+      const agora = new Date();
+      let diff = agora - inicioRelacionamento;
+
+      const segundos = Math.floor(diff / 1000);
+      const minutos = Math.floor(segundos / 60);
+      const horas = Math.floor(minutos / 60);
+      const dias = Math.floor(horas / 24);
+      const meses = Math.floor(dias / 30.44); // aproximação média
+
+      const diasRestantes = dias % 30.44;
+      const horasRestantes = horas % 24;
+      const minutosRestantes = minutos % 60;
+
+      document.getElementById("contador").innerText =
+        `${meses} mes, ${Math.floor(diasRestantes)} dias e ${horasRestantes} horas de amor ❤️`;
+    }
+
+    setInterval(atualizarContador, 1000);
+    atualizarContador();
+  </script>
+</body>
+</html>
